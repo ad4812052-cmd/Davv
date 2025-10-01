@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title></title> 
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;; 
+            background-size: cover; 
+            background-position: center; 
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Send the video to the background */
+        }
+
+        .container {
+            display: grid;
+            grid-template-areas: 
+                "top-left top-right"
+                "button button"
+                "bottom-left bottom-right"
+                ". bottom-text";
+            gap: 20px;
+            text-align: center;
+            position: relative; 
+        }
+
+        .box {
+            width: 150px;
+            height: 200px;
+            border: 2px solid white;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .box-top-left {
+            grid-area: top-left;
+        }
+
+        .box-bottom-right {
+            grid-area: bottom-right;
+        }
+
+        .text {
+            color: white;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 14px;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .text-top-right {
+            grid-area: top-right;
+        }
+
+        .text-bottom-left {
+            grid-area: bottom-left;
+        }
+
+        .text-bottom {
+            grid-area: bottom-text;
+            position: absolute;
+            bottom: 50px; 
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            padding: 10px; 
+            font-size: 12px; 
+            line-height: 1.4; 
+        }
+
+        .button {
+            grid-area: button;
+            padding: 10px 20px;
+            font-size: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: white;
+            color: black;
+            margin: auto;
+        }
+    </style> 
+</head> 
+<body> 
+
+    <!-- Background Video -->
+    <video autoplay muted loop id="background-video">
+        <source src="love2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <audio autoplay loop>
+        <source src="Mygirl2.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container"> 
+        <div class="box box-top-left"> 
+            <img src="poto1.jpg" alt="Image 1"> 
+        </div> 
+        <div class="text text-top-right">
+            Haii pretty baby girl, i hope u doing well. Happy girlfriend day's cantik. Semangat stpm kamu. Don't forget to take care of yourself and always be happy and jangan putus asa baee..❤️❤️  
+        </div> 
+        <a href="https://api.whatsapp.com/send?phone=601131884005&text=Thank you (My love❤️) " class="button">BALAS</a>
+        <div class="text text-bottom-left">
+            i love you so much, you are my world. i will always be your protector and your supporter. Semoga kita dapat melalui banyak rintangan bersama yah sayang :3
+        <div class="box box-bottom-right"> 
+            <img src="poto2.jpg" alt="Image 2"> 
+        </div> 
+        <div class="text text-bottom">
+            Selamat hari perempuan sedunia ya cantikku 
+        </div> 
+    </div> 
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById('background-video');
+            if (video) {
+                video.playbackRate = 0.5; // Set the playback speed (0.5 = half speed)
+            }
+        });
+    </script>
+</body>
+</html>
